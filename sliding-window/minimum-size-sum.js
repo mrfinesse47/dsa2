@@ -7,7 +7,7 @@ const minSubArrayLen = (target, arr) => {
   let left = 0;
   let minLength = Infinity;
   for (let right = 0; right < arr.length; right++) {
-    if (arr[right] > target) {
+    if (arr[right] >= target) {
       return 1;
     }
     sum += arr[right];
