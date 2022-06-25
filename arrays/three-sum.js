@@ -3,6 +3,7 @@ const threeSum = (nums) => {
   let arr = nums.sort((m, n) => m - n);
   let result = [];
   const hash = {};
+  const checkedNums = {};
 
   if (nums.length < 3) {
     return [];
@@ -14,23 +15,26 @@ const threeSum = (nums) => {
     let right = arr.length - 1;
     let left = 0;
 
-    while (left < right) {
-      if (arr[left] + arr[right] === target * -1) {
-        const triplet = [arr[left], arr[right], target].sort((m, n) => m - n);
+    if (!checkedNums[target]) {
+      checkedNums[target] = true;
+      while (left < right) {
+        if (arr[left] + arr[right] === target * -1) {
+          const triplet = [arr[left], arr[right], target].sort((m, n) => m - n);
 
-        if (
-          hash[triplet] === undefined &&
-          left !== tgtIdx &&
-          right !== tgtIdx
-        ) {
-          hash[triplet] = true;
-          result.push(triplet);
+          if (
+            hash[triplet] === undefined &&
+            left !== tgtIdx &&
+            right !== tgtIdx
+          ) {
+            hash[triplet] = true;
+            result.push(triplet);
+          }
+          right--;
+        } else if (arr[left] + arr[right] < target * -1) {
+          left++;
+        } else {
+          right--;
         }
-        right--;
-      } else if (arr[left] + arr[right] < target * -1) {
-        left++;
-      } else {
-        right--;
       }
     }
 
@@ -39,3 +43,5 @@ const threeSum = (nums) => {
   }
   return result;
 };
+
+console.log(threeSum([-1, 0, 1, 2, -1, -4]));
