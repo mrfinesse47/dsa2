@@ -41,10 +41,15 @@ class SinglyLinkedList {
     return current;
   }
   reverse() {
+    if (this.length === 0) {
+      return null;
+    }
     let currentNode = this.head;
     let next;
     let prev = null;
-    for (let i = 0; i < this.length; i++) {
+    while (currentNode) {
+      //or a for loop using length works,
+      //a for loop can be less confusing to me
       next = currentNode.next;
       currentNode.next = prev; //when u set a param using . you are setting a value on the linked list,
       //the rest of the variables are references
@@ -54,10 +59,12 @@ class SinglyLinkedList {
     let head = this.head; //ref
     this.head = this.tail; //setting
     this.tail = head;
-    console.log(this.head);
-    console.log("tail", this.tail);
+    return this;
   }
   printAllVal() {
+    if (this.length === 0) {
+      return null;
+    }
     let node = this.head;
     let index = 0;
     while (node.next) {
@@ -73,8 +80,5 @@ class SinglyLinkedList {
 const list = new SinglyLinkedList();
 list.push(1);
 list.push(2);
-list.push(3);
-list.push(4);
-list.reverse();
-
+console.log(list.reverse());
 list.printAllVal();
