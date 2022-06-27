@@ -104,9 +104,4 @@ class SinglyLinkedList {
   }
 }
 
-var list = new SinglyLinkedList();
-
-list.push(3);
-list.push(2);
-list.push(0);
-list.push(4);
+module.exports = SinglyLinkedList;
