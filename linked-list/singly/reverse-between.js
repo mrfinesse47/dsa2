@@ -78,7 +78,7 @@ var reverseBetween = function (head, left, right) {
     if (i === right + 1) {
       oneRight = currentNode;
     }
-    if (i >= left && i <= right && right !== left) {
+    if (i >= left && i <= right) {
       if (i === left) {
         localTail = currentNode; //the first becomes the local tail
       }

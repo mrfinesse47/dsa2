@@ -1,3 +1,5 @@
+// 142. Linked List Cycle II
+
 class Node {
   constructor(val) {
     this.val = val;
@@ -110,3 +112,10 @@ list.push(3);
 list.push(2);
 list.push(0);
 list.push(4);
+
+const fourth = list.get(3);
+
+fourth.next = list.get(1);
+console.log(fourth);
+
+var detectCycle = function (head) {};
