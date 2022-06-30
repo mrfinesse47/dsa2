@@ -18,7 +18,6 @@ const characterReplacement = (s, k) => {
     while (k < total - maxChar) {
       charCounter[s[left]]--;
       total--;
-      maxChar = Math.max(maxChar, charCounter[s[left]]);
       left++;
     }
 
