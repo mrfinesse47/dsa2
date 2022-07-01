@@ -27,12 +27,4 @@ const characterReplacement = (s, k) => {
   return maxLen;
 };
 
-function determineMaxChar(obj) {
-  let max = 0;
-  for (const key in obj) {
-    max = Math.max(max, obj[key]);
-  }
-  return max;
-}
-
 console.log(characterReplacement("AABABBA", 2));

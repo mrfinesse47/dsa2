@@ -1,4 +1,6 @@
 //142. Linked List Cycle II
+//there is a solution that doesnt use as much memory ie space O(1)
+//the tortise and hare algo
 
 const SinglyLinkedList = require("./singly-linked-lists");
 
