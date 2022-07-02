@@ -42,6 +42,7 @@ function minRewards(scores) {
   }
 
   min.forEach((val) => {
+    console.log(prizes);
     let i = 0;
     let scoresCounter = 1;
     while (!max.has(val + i) && scores[val + i] !== undefined) {
@@ -58,6 +59,7 @@ function minRewards(scores) {
   });
 
   max.forEach((val) => {
+    console.log(prizes);
     let maxLeft = prizes[val - 1];
     let maxRight = prizes[val + 1];
 
@@ -72,8 +74,14 @@ function minRewards(scores) {
       sum += prizes[val];
     }
   });
+  console.log(prizes);
 
   return sum;
 }
 
-console.log(minRewards([0, 4, 2, 1, 3]));
+console.log(
+  minRewards([
+    800, 400, 20, 10, 30, 61, 70, 90, 17, 21, 22, 13, 12, 11, 8, 4, 2, 1, 3, 6,
+    7, 9, 0, 68, 55, 67, 57, 60, 51, 661, 50, 65, 53,
+  ])
+);
