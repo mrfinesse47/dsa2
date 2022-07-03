@@ -6,6 +6,8 @@ class BST {
   }
 }
 
+//runs in O(1) space
+
 function findClosestValueInBst(tree, target) {
   let node = tree;
   let closest = tree.value;
