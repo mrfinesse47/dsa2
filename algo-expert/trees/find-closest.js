@@ -5,7 +5,6 @@ class BST {
     this.right = null;
   }
 }
-
 function findClosestValueInBst(tree, target) {
   // Write your code here.
   let minDiff = Infinity;
