@@ -8,6 +8,11 @@ class BST {
     this.right = null;
   }
 }
+
+//this solution is average O(log(n)) in both time and space due to the memory requirements of
+//the recursive calls
+//the worst case time and space is O(n), in a single branch tree
+
 function findClosestValueInBst(tree, target) {
   // Write your code here.
 
@@ -16,9 +21,8 @@ function findClosestValueInBst(tree, target) {
   function traverse(node, target, closest) {
     let oldMinDiff = Math.abs(target - closest);
     let difference = Math.abs(target - node.value);
-    minDiff = Math.min(difference, oldMinDiff);
     // console.log("visiting:", node.value);
-    if (oldMinDiff > minDiff) {
+    if (oldMinDiff > difference) {
       closest = node.value;
     }
     if (target < node.value && node.left) {
@@ -42,4 +46,4 @@ tree.right.left = new BST(13);
 tree.right.right = new BST(22);
 tree.right.left.right = new BST(14);
 
-console.log(findClosestValueInBst(tree, 10));
+console.log(findClosestValueInBst(tree, 24));
