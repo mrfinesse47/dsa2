@@ -109,6 +109,48 @@ class BinarySearchTree {
       }
     }
   }
+  DFSpost() {
+    let node = this.root;
+    const data = [];
+
+    //make use if a queue, fifo
+
+    traverse(node);
+
+    return data;
+
+    function traverse(node) {
+      if (node.left) {
+        traverse(node.left);
+      }
+
+      if (node.right) {
+        traverse(node.right);
+      }
+      data.push(node.value);
+    }
+  }
+  DFSinOrder() {
+    //leaves the values in order which is cool and useful in some cases;
+    let node = this.root;
+    const data = [];
+
+    //make use if a queue, fifo
+
+    traverse(node);
+
+    return data;
+
+    function traverse(node) {
+      if (node.left) {
+        traverse(node.left);
+      }
+      data.push(node.value);
+      if (node.right) {
+        traverse(node.right);
+      }
+    }
+  }
 }
 
 var tree = new BinarySearchTree();
@@ -118,6 +160,5 @@ tree.insert(15);
 tree.insert(3);
 tree.insert(8);
 tree.insert(20);
-tree.insert(7);
-tree.insert(11);
-console.log(tree.DFSpre());
+
+console.log(tree.DFSinOrder());
