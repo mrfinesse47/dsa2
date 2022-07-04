@@ -24,7 +24,3 @@ function threeNumberSum(array, targetSum) {
 }
 
 console.log(threeNumberSum([1, 2, 3], 6));
-
-//sum hash
-//total:[num1,num2]
-//then do 2 sum
